@@ -42,10 +42,9 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
 
 
 # Frontend (React)
-   # React Components
 
-  .App.js: The main component that manages the state of the game, including the grid, selected pieces, current player, move history, and game status.
-        .State Variables:
+  App.js: The main component that manages the state of the game, including the grid, selected pieces, current player, move history, and game status.
+    *.State Variables:*
             .grid: Represents the current state of the game grid.
             .selected: Stores the currently selected piece by the player.
             .currentPlayer: Tracks whose turn it is.
@@ -53,12 +52,12 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
             .winner: Stores the winner of the game, if any.
             .isGameStarted: Flags whether the game has started.
 
-  .Event Handlers:
+  *Event Handlers:*
           .handleClick: Handles selecting a piece on the grid.
           .movePiece: Handles moving the selected piece.
           .startGame: Resets the game state and starts a new game.
 
-  .Socket Events:
+  *.Socket Events:*
           .gameStateUpdate: Updates the grid and other game states when a player makes a move.
           .gameOver: Displays the winner when the game ends.
           .gameReset: Resets the game if a player disconnects.
