@@ -1,4 +1,4 @@
-**Multiplayer 5x5 Custom Chess Game**
+# *Multiplayer 5x5 Custom Chess Game*
 Overview
 
 This is a multiplayer, grid-based game built with Node.js, Express, and Socket.io. The game allows two players to connect and take turns moving pieces on a grid. The game logic ensures valid moves based on piece type and checks for a winner after each move.
@@ -10,7 +10,7 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
   .  Graceful Handling of Disconnections: If a player disconnects, the game state is reset.
 
 
-#System Design
+# System Design
 1. Architecture
    The project follows a client-server architecture:
    .Client (Frontend): Built with React, it provides the user interface, handles user input, and communicates with the server to fetch updates and send player moves.
@@ -24,24 +24,25 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
       both players.
     4.Game End: If a winning condition is met, the server declares a winner and notifies both clients.
 
-#Project Structure
-  5x5-Custom-game/
+# Project Structure
+5x5-Custom-game/
 │
-├── BackEnd
-├── server.js
-├── gamelogic.js
-├── validation.js              
-├── package.json          
-├── README.md              
-├── FrontEnd/                
-│   └── App.js
-│   └── App.css
-│   └── index.js         
-└── node_modules/   
+├── BackEnd/
+│   ├── server.js
+│   ├── gamelogic.js
+│   ├── validation.js
+│   ├── package.json
+│   └── README.md
+│
+└── FrontEnd/
+    ├── App.js
+    ├── App.css
+    └── index.js
+└── node_modules/
 
 
-#Frontend (React)
-   #React Components
+# Frontend (React)
+   # React Components
 
   .App.js: The main component that manages the state of the game, including the grid, selected pieces, current player, move history, and game status.
         .State Variables:
@@ -62,20 +63,21 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
           .gameOver: Displays the winner when the game ends.
           .gameReset: Resets the game if a player disconnects.
 
-#Game Logic
+# Game Logic
 
 .The movement logic for different pieces (P, H1, H2, H3) is implemented in the handleMoveLogic function. It ensures that each piece moves according to the game rules and checks for 
  valid moves.
 .The game checks for a winner after each move using the checkWinner function.
 
-#Backend (Node.js)
+# Backend (Node.js)
   #Express Server
     .server.js: The main server file that sets up an Express server and uses Socket.io for real-time communication.
 
-  #Game State Management
+  # Game State Management
     .Game State Object: Stores the grid, current player, move history, and winner.
 
-  let gameState = {
+
+let gameState = {
     grid: [
         ['A-P1', 'A-H2', 'A-H1', 'A-H3', 'A-P2'],
         ['', '', '', '', ''],
@@ -88,7 +90,8 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
     winner: null
 };
 
-#Socket.io Events
+
+# Socket.io Events
   .Connection: Assigns players to teams and starts the game when two players are connected.
     io.on('connection', (socket) => {
     // Player assignment logic
@@ -97,14 +100,14 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
   .disconnect: Handles player disconnections by resetting the game state.
 
 
-#Future Enhancements
+# Future Enhancements
 
    .Spectator Mode: Allow additional users to join as spectators.
    .Chat Feature: Add a real-time chat feature for players to communicate.
    .Improved UI: Enhance the user interface with animations and better styling.
    .Persistent Game State: Store game states in a database to allow games to be resumed later.
 
-#Usage
+# Usage
 
    1) Connecting Players:
         Player A connects first and is assigned the ID 'A'.
@@ -122,5 +125,18 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
 
    4)  Handling Disconnections:
         If a player disconnects, the game state resets, and the remaining player must wait for a new opponent.
+# Making Moves
 
+    Players take turns moving their pieces.
+    Each move is validated on the server, and the game state is updated if the move is valid.
+    Invalid moves are rejected, and the player is prompted to try again.
+
+# Winning the Game
+
+    The game ends when a player successfully moves one of their pieces to the opponent's starting row.
+    The server notifies both players of the winner.
+
+# Handling Disconnections
+
+    If a player disconnects, the game state resets, and the remaining player must wait for a new opponent.
       
