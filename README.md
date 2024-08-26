@@ -1,4 +1,4 @@
-#Multiplayer 5x5 Custom Chess Game
+**Multiplayer 5x5 Custom Chess Game**
 Overview
 
 This is a multiplayer, grid-based game built with Node.js, Express, and Socket.io. The game allows two players to connect and take turns moving pieces on a grid. The game logic ensures valid moves based on piece type and checks for a winner after each move.
