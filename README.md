@@ -25,20 +25,20 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
     4.Game End: If a winning condition is met, the server declares a winner and notifies both clients.
 
 # Project Structure
-5x5-Custom-game/
-│
-├── BackEnd/
-│   ├── server.js
-│   ├── gamelogic.js
-│   ├── validation.js
-│   ├── package.json
-│   └── README.md
-│
-└── FrontEnd/
-    ├── App.js
-    ├── App.css
-    └── index.js
-└── node_modules/
+    5x5-Custom-game/
+     │
+     ├── BackEnd/
+     │   ├── server.js
+     │   ├── gamelogic.js
+     │   ├── validation.js
+     │   ├── package.json
+     │   └── README.md
+     │
+     └── FrontEnd/
+          ├── App.js
+          ├── App.css
+          └── index.js
+          └── node_modules/
 
 
 # Frontend (React)
@@ -73,22 +73,22 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
   #Express Server
     .server.js: The main server file that sets up an Express server and uses Socket.io for real-time communication.
 
-  # Game State Management
-    .Game State Object: Stores the grid, current player, move history, and winner.
+# Game State Management
+  .Game State Object: Stores the grid, current player, move history, and winner.
 
 
-let gameState = {
-    grid: [
-        ['A-P1', 'A-H2', 'A-H1', 'A-H3', 'A-P2'],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['', '', '', '', ''],
-        ['B-P1', 'B-H2', 'B-H1', 'B-H3', 'B-P2'],
-    ],
-    currentPlayer: 'A',
-    moveHistory: [],
-    winner: null
-};
+    let gameState = {
+        grid: [
+            ['A-P1', 'A-H2', 'A-H1', 'A-H3', 'A-P2'],
+            ['', '', '', '', ''],
+            ['', '', '', '', ''],
+            ['', '', '', '', ''],
+            ['B-P1', 'B-H2', 'B-H1', 'B-H3', 'B-P2'],
+        ],
+        currentPlayer: 'A',
+        moveHistory: [],
+        winner: null
+    };
 
 
 # Socket.io Events
