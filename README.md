@@ -93,9 +93,11 @@ This is a multiplayer, grid-based game built with Node.js, Express, and Socket.i
 
 # Socket.io Events
   .Connection: Assigns players to teams and starts the game when two players are connected.
-    io.on('connection', (socket) => {
-    // Player assignment logic
-});
+
+              io.on('connection', (socket) => {
+              // Player assignment logic
+          });
+
   .playerMove: Handles incoming moves from players, validates the move, updates the game state, and emits updates to both players.
   .disconnect: Handles player disconnections by resetting the game state.
 
